@@ -2933,6 +2933,13 @@
       savedMode = localStorage.getItem(TMK) || 'browse';
     } catch(_) {}
     
+    // Dynamically hide subjective tab if empty
+    if (subjChapters.length === 0) {
+      const subjTab = document.querySelector('.mode-tab[data-mode="subjective"]');
+      if (subjTab) subjTab.style.display = 'none';
+      if (savedMode === 'subjective') savedMode = 'browse';
+    }
+
     // Simulate tab click
     const activeTabButton = document.querySelector(`.mode-tab[data-mode="${savedMode}"]`);
     if (activeTabButton) {
