@@ -1,0 +1,2945 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <title>大一近代史题库（优学院）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-hover: #f1f5f9;
+      --border: #e2e8f0;
+      --border-hover: #cbd5e1;
+      --border-focus: #6366f1;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-light: #e0e7ff;
+      
+      --success: #10b981;
+      --success-hover: #059669;
+      --success-light: #d1fae5;
+      
+      --warning: #f59e0b;
+      --warning-hover: #d97706;
+      --warning-light: #fef3c7;
+      
+      --danger: #ef4444;
+      --danger-hover: #dc2626;
+      --danger-light: #fef2f2;
+      
+      --info: #3b82f6;
+      --info-hover: #1d4ed8;
+      --info-light: #dbeafe;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      
+      --radius-xl: 20px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      
+      --font: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
+    }
+
+    body.dark {
+      --bg: #090d16;
+      --surface: #111827;
+      --surface-hover: #1f2937;
+      --border: #1f2937;
+      --border-hover: #374151;
+      --border-focus: #818cf8;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-light: rgba(99, 102, 241, 0.15);
+      
+      --success: #34d399;
+      --success-hover: #10b981;
+      --success-light: rgba(52, 211, 153, 0.15);
+      
+      --warning: #fbbf24;
+      --warning-hover: #f59e0b;
+      --warning-light: rgba(251, 191, 36, 0.15);
+      
+      --danger: #f87171;
+      --danger-hover: #ef4444;
+      --danger-light: rgba(248, 113, 113, 0.15);
+      
+      --info: #60a5fa;
+      --info-hover: #3b82f6;
+      --info-light: rgba(96, 165, 250, 0.15);
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 15px;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    .app {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 20px 100px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+
+    /* Header & Navigation */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .header-branding h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--info) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .header-branding p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      color: var(--text-muted);
+    }
+
+    .icon-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+    
+    .icon-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Navigation Tabs */
+    .mode-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 24px;
+      padding: 5px;
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mode-tab {
+      flex: 1;
+      padding: 10px 8px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      user-select: none;
+    }
+
+    .mode-tab:hover:not(.active) {
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .mode-tab.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+    }
+
+    /* Common Card Styling */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-md);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-hover);
+    }
+
+    /* Filters Container */
+    .filter-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .search-wrap {
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      width: 16px;
+      height: 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 40px 12px 42px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+
+    .search-input:focus {
+      border-color: var(--border-focus);
+      background: var(--surface);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: none;
+      background: var(--border);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .search-clear:hover {
+      background: var(--text-muted);
+      color: var(--surface);
+    }
+
+    .search-clear.show {
+      display: flex;
+    }
+
+    /* Tags Scroll & Toggle */
+    .tags-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .tags-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tags-toggle-btn {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tags-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      max-height: 76px;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tags-row.expanded {
+      max-height: 400px;
+    }
+
+    .tags-row .bubble {
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--text);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .tags-row .bubble:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .tags-row .bubble.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Batch Nav Bar */
+    .batch-nav {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .batch-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .batch-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .batch-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Stats Display */
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .stats-left {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stats-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .stats-chips .chip {
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.72rem;
+    }
+
+    /* Questions Cards */
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .card-index {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    .card-type {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+    
+    .type-single { background: var(--primary-light); color: var(--primary); }
+    .type-multi { background: var(--warning-light); color: var(--warning-hover); }
+    .type-judge { background: var(--info-light); color: var(--info-hover); }
+    .type-other { background: var(--border); color: var(--text-muted); }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    /* Card Options */
+    .card-options {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .opt {
+      display: flex;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.86rem;
+      align-items: flex-start;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .opt-label {
+      font-weight: 800;
+      color: var(--primary);
+      min-width: 18px;
+    }
+
+    /* Browse mode option colors */
+    .opt.correct-answer {
+      background: var(--success-light);
+      border-color: var(--success);
+    }
+    .opt.correct-answer .opt-label {
+      color: var(--success-hover);
+    }
+
+    /* Test & Self-Test selection states */
+    .opt.test-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success) !important;
+      color: var(--success-hover) !important;
+    }
+    .opt.test-correct .opt-label {
+      color: var(--success-hover) !important;
+    }
+
+    .opt.test-incorrect {
+      background: var(--danger-light) !important;
+      border-color: var(--danger) !important;
+      color: var(--danger-hover) !important;
+    }
+    .opt.test-incorrect .opt-label {
+      color: var(--danger-hover) !important;
+    }
+
+    .opt.test-selected {
+      border-color: var(--primary) !important;
+      background: var(--primary-light) !important;
+    }
+
+    /* Card Answer & Analysis */
+    .answer-container {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-answer {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: var(--radius-md);
+      background: var(--success-light);
+      border: 1px solid var(--success);
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--success-hover);
+      width: fit-content;
+    }
+    
+    .card-answer::before {
+      content: '正确答案：';
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    /* Hide Answer Blur */
+    .hide-answer .card-options .opt {
+      /* In test mode, options are clickable buttons, remove hover behavior */
+    }
+    
+    .hide-answer .opt:hover:not(.test-correct):not(.test-incorrect):not(.test-selected) {
+      background: var(--surface-hover);
+      border-color: var(--border-hover);
+    }
+
+    .hide-answer .card-answer-wrap {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .hide-answer .card-answer {
+      filter: blur(8px);
+      transition: filter 0.3s ease;
+    }
+    
+    .hide-answer .card-answer.revealed {
+      filter: none;
+    }
+
+    .card-detail {
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+    .card-detail summary {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      user-select: none;
+    }
+    
+    .card-detail summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .card-detail summary::after {
+      content: '▸';
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .card-detail[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    .analysis-text {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      white-space: pre-wrap;
+      padding: 10px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+    }
+
+    /* Card Tags */
+    .card-tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .card-tags .micro {
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: var(--primary-light);
+      font-size: 0.68rem;
+      color: var(--primary);
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .card-tags .micro:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    
+    .memorized-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--success);
+      color: #ffffff;
+      font-size: 0.6rem;
+      font-weight: 800;
+    }
+
+    /* Self-Test Multi-choice Submit */
+    .submit-test-btn {
+      padding: 8px 16px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: fit-content;
+      transition: background 0.2s;
+      margin-bottom: 8px;
+    }
+    
+    .submit-test-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Scoreboard */
+    .scoreboard {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: var(--primary-light);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .scoreboard-val {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .scoreboard-btn {
+      margin-left: auto;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--primary);
+      background: var(--surface);
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .scoreboard-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Dividers */
+    .divider {
+      margin: 20px 0;
+      height: 1px;
+      background: var(--border);
+      position: relative;
+    }
+
+    .divider span {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -10px;
+      background: var(--bg);
+      padding: 0 12px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .sentinel {
+      height: 20px;
+    }
+
+    /* ANKI Mode - Redesigned Dashboard */
+    .anki-dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .anki-dashboard {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Circle Progress Display */
+    .anki-stats-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .circle-progress-wrap {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .circle-progress-ring {
+      transform: rotate(-90deg);
+    }
+
+    .circle-progress-bg {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 10;
+    }
+
+    .circle-progress-bar {
+      fill: none;
+      stroke: var(--success);
+      stroke-width: 10;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.5s ease;
+    }
+
+    .circle-progress-text {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .circle-progress-percent {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .circle-progress-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .anki-status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .anki-status-grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+
+    .anki-status-count {
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .anki-status-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .count-new { color: var(--info-hover); }
+    .count-review { color: var(--warning-hover); }
+    .count-mastered { color: var(--success); }
+
+    /* ANKI Options Card */
+    .anki-options-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .anki-option-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .anki-option-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .anki-select, .anki-btn-group {
+      width: 100%;
+    }
+
+    .anki-select {
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.82rem;
+      outline: none;
+    }
+    
+    .anki-select:focus {
+      border-color: var(--primary);
+    }
+
+    .anki-btn-group {
+      display: flex;
+      gap: 4px;
+      background: var(--bg);
+      padding: 3px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .anki-btn-group-option {
+      flex: 1;
+      padding: 8px;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .anki-btn-group-option.active {
+      background: var(--surface);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .anki-action-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    }
+
+    .anki-action-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ANKI Card Arena */
+    .anki-card-arena {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .anki-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .anki-exit-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .anki-exit-btn:hover {
+      border-color: var(--danger);
+      color: var(--danger);
+      background: var(--danger-light);
+    }
+
+    .anki-card-container {
+      perspective: 1000px;
+      margin-bottom: 20px;
+    }
+
+    .anki-card-inner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 30px 24px;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .anki-card-inner.flipping {
+      transform: rotateY(90deg) scale(0.95);
+      opacity: 0;
+    }
+
+    .anki-q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .anki-q-body {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: var(--text);
+      text-align: center;
+      margin: 20px 0;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .anki-options-area {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .anki-reveal-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1.5px dashed var(--primary);
+      border-radius: var(--radius-lg);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .anki-reveal-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .anki-rating-btns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border);
+      width: 100%;
+    }
+
+    .anki-rate-btn {
+      padding: 10px 4px;
+      border-radius: var(--radius-md);
+      border: 1px solid;
+      cursor: pointer;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: all 0.2s;
+    }
+    
+    .anki-rate-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .anki-rate-btn.again {
+      border-color: var(--danger);
+      background: var(--danger-light);
+      color: var(--danger-hover);
+    }
+    .anki-rate-btn.hard {
+      border-color: var(--warning);
+      background: var(--warning-light);
+      color: var(--warning-hover);
+    }
+    .anki-rate-btn.good {
+      border-color: var(--success);
+      background: var(--success-light);
+      color: var(--success-hover);
+    }
+    .anki-rate-btn.easy {
+      border-color: var(--info);
+      background: var(--info-light);
+      color: var(--info-hover);
+    }
+    
+    .anki-rate-interval {
+      font-size: 0.6rem;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .anki-progress-bar-wrap {
+      width: 100%;
+      height: 5px;
+      background: var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+
+    .anki-progress-bar-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Subjective Mode */
+    .subj-nav-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: var(--radius-lg);
+    }
+    
+    .subj-nav-header button {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    
+    .subj-nav-header button:hover:not(:disabled) {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    .subj-nav-header button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .subj-chapter-card {
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .subj-chapter-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .subj-chapter-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .subj-chapter-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .subj-section {
+      border-left: 3px solid var(--primary);
+      padding-left: 14px;
+      margin: 18px 0;
+    }
+
+    .subj-section-heading {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .subj-section-content {
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .subj-points {
+      list-style-type: none;
+      margin-top: 6px;
+    }
+
+    .subj-points li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 3px;
+    }
+
+    .subj-points li::before {
+      content: '•';
+      position: absolute;
+      left: 2px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(9, 13, 22, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      max-width: 460px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transform: translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .modal-overlay.show .modal-container {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--danger-light);
+      color: var(--danger);
+      border-color: var(--danger);
+    }
+
+    .modal-header {
+      padding: 24px 24px 12px;
+      text-align: center;
+    }
+
+    .modal-logo {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .modal-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .modal-body {
+      padding: 0 24px 24px;
+    }
+
+    .info-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .info-box-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
+    .info-box-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-box-val {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .modal-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .modal-link-box {
+      background: var(--primary-light);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .modal-link {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .modal-link:hover {
+      text-decoration: underline;
+    }
+
+    .qr-box {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .qr-img {
+      width: 140px;
+      height: 140px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+
+    .qr-tip {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg);
+    }
+
+    .update-time {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .modal-btn {
+      padding: 8px 20px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.82rem;
+    }
+    
+    .modal-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translate(-50%, 20px);
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.84rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1010;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toast.show {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 600px) {
+      .app {
+        padding: 12px 12px 80px;
+      }
+      
+      html {
+        font-size: 14px;
+      }
+
+      .header {
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+      }
+
+      .header-branding h1 {
+        font-size: 1.2rem;
+      }
+
+      .mode-tab {
+        font-size: 0.8rem;
+        padding: 8px 4px;
+        gap: 4px;
+      }
+
+      .card {
+        padding: 16px;
+        border-radius: var(--radius-md);
+      }
+
+      .filter-container {
+        padding: 14px;
+      }
+
+      .search-input {
+        padding: 10px 36px 10px 38px;
+        font-size: 0.85rem;
+      }
+
+      .search-icon {
+        left: 12px;
+        width: 14px;
+        height: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-branding" style="display: flex; align-items: center;">
+        <img src="_assets/logo.png" alt="Logo" style="height: 42px; width: 42px; border-radius: 10px; margin-right: 12px; object-fit: cover;" onerror="this.style.display='none'"/>
+        <div>
+          <h1 id="mainTitle" style="margin: 0; line-height: 1.2;">优学院 · 课程题库</h1>
+          <p style="margin: 2px 0 0 0; line-height: 1.2;">优学院整理答案免费浏览系统</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="infoBtn" title="查看关于 / 打赏">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </button>
+        <button class="icon-btn" id="copyBtn" title="复制所有题目的 Markdown">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" title="切换深色主题">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="mode-tabs">
+      <div class="mode-tab active" data-mode="browse">
+        <span>🔍</span>题库浏览
+      </div>
+      <div class="mode-tab" data-mode="test">
+        <span>📝</span>自测模式
+      </div>
+      <div class="mode-tab" data-mode="anki">
+        <span>🧠</span>ANKI复习
+      </div>
+      <div class="mode-tab" data-mode="subjective">
+        <span>📘</span>主观题
+      </div>
+    </nav>
+
+    <!-- Mode: Browse -->
+    <div id="browseMode">
+      <div class="filter-container">
+        <div class="search-wrap">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input class="search-input" id="search" placeholder="搜索题目或标签 (输入 Q123 直接定位题号)..." autocomplete="off"/>
+          <button class="search-clear" id="clearBtn">×</button>
+        </div>
+        <div class="tags-header">
+          <span class="tags-label">热门标签</span>
+          <button class="tags-toggle-btn" id="tagsToggle">展开全部</button>
+        </div>
+        <div class="tags-row" id="tagsRow"></div>
+        <div class="tags-label" style="margin: 4px 0 8px">按 50 题分段筛选</div>
+        <div class="batch-nav" id="batchNav"></div>
+        <div class="stats-row" id="stats"></div>
+      </div>
+      <div id="list"></div>
+      <div class="sentinel" id="sentinel"></div>
+    </div>
+
+    <!-- Mode: Test -->
+    <div id="testMode" style="display:none">
+      <div class="scoreboard" id="testScoreboard">
+        <div>自测得分：<span class="scoreboard-val" id="testScore">0 / 0</span></div>
+        <div style="margin-left: 12px; font-weight: 500;">正确率：<span id="testAccuracy">0%</span></div>
+        <button class="scoreboard-btn" id="resetTestBtn">重新答题</button>
+      </div>
+      <div class="filter-container">
+        <div class="search-wrap">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input class="search-input" id="searchTest" placeholder="筛选自测题目..." autocomplete="off"/>
+          <button class="search-clear" id="clearTestBtn">×</button>
+        </div>
+        <div class="tags-header">
+          <span class="tags-label">热门标签</span>
+          <button class="tags-toggle-btn" id="tagsToggleTest">展开全部</button>
+        </div>
+        <div class="tags-row" id="tagsRowTest"></div>
+        <div class="tags-label" style="margin: 4px 0 8px">按分段筛选</div>
+        <div class="batch-nav" id="batchNavTest"></div>
+        <div class="stats-row" id="statsTest"></div>
+      </div>
+      <div id="listTest"></div>
+      <div class="sentinel" id="sentinelTest"></div>
+    </div>
+
+    <!-- Mode: ANKI -->
+    <div id="ankiMode" style="display:none">
+      <!-- ANKI Dashboard -->
+      <div id="ankiDashboard" class="anki-dashboard">
+        <div class="card anki-stats-card">
+          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">ANKI 学习进度</h3>
+          <div class="circle-progress-wrap">
+            <svg class="circle-progress-ring" width="120" height="120">
+              <circle class="circle-progress-bg" cx="60" cy="60" r="50"/>
+              <circle class="circle-progress-bar" id="ankiCircleProgress" cx="60" cy="60" r="50"/>
+            </svg>
+            <div class="circle-progress-text">
+              <span class="circle-progress-percent" id="ankiMasteryRate">0%</span>
+              <span class="circle-progress-label">掌握率</span>
+            </div>
+          </div>
+          <div class="anki-status-grid">
+            <div class="anki-status-grid-item">
+              <span class="anki-status-count count-new" id="ankiCountNew">0</span>
+              <span class="anki-status-label">未开始</span>
+            </div>
+            <div class="anki-status-grid-item">
+              <span class="anki-status-count count-review" id="ankiCountReview">0</span>
+              <span class="anki-status-label">学习中</span>
+            </div>
+            <div class="anki-status-grid-item">
+              <span class="anki-status-count count-mastered" id="ankiCountMastered">0</span>
+              <span class="anki-status-label">已掌握</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card anki-options-card">
+          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 8px;">ANKI 复习设置</h3>
+          
+          <div class="anki-option-group">
+            <span class="anki-option-label">复习范围</span>
+            <select class="anki-select" id="ankiRangeSelect">
+              <option value="all">全部题目</option>
+              <option value="batch">按 Batch 分段选择</option>
+              <option value="unmastered">仅复习未掌握/错题</option>
+            </select>
+          </div>
+          
+          <div class="anki-option-group" id="ankiBatchGroup" style="display:none">
+            <span class="anki-option-label">选择分段</span>
+            <select class="anki-select" id="ankiBatchSelect"></select>
+          </div>
+
+          <div class="anki-option-group">
+            <span class="anki-option-label">出牌模式</span>
+            <div class="anki-btn-group" id="ankiModeGroup">
+              <div class="anki-btn-group-option active" data-val="recite">看题背诵</div>
+              <div class="anki-btn-group-option" data-val="select">看题选择</div>
+            </div>
+          </div>
+
+          <div class="anki-option-group">
+            <span class="anki-option-label">卡片顺序</span>
+            <div class="anki-btn-group" id="ankiOrderGroup">
+              <div class="anki-btn-group-option active" data-val="random">随机乱序</div>
+              <div class="anki-btn-group-option" data-val="sequential">顺序出卡</div>
+            </div>
+          </div>
+          
+          <div style="display:flex; gap: 8px; margin-top: 6px;">
+            <button class="anki-action-btn" id="startAnkiBtn">开始复习</button>
+            <button class="icon-btn" id="resetAnkiProgressBtn" title="清空所有掌握进度" style="border-radius: var(--radius-md); flex-shrink: 0; width: 44px; height: 44px;">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANKI Card Arena -->
+      <div id="ankiArena" class="anki-card-arena" style="display:none">
+        <div class="anki-card-header">
+          <button class="anki-exit-btn" id="exitAnkiBtn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 14px; height: 14px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            退出复习
+          </button>
+          <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);" id="ankiProgressText">0 / 0</span>
+        </div>
+        
+        <div class="anki-card-container">
+          <div class="anki-card-inner" id="ankiCardInner">
+            <!-- Dynamic Card Content -->
+          </div>
+        </div>
+        
+        <div class="anki-progress-bar-wrap">
+          <div class="anki-progress-bar-fill" id="ankiProgressBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode: Subjective -->
+    <div id="subjectiveMode" style="display:none">
+      <div class="subj-nav-header" id="subjNavHeader" style="display:none">
+        <button id="subjBackBtn">☰ 目录导航</button>
+        <button id="subjPrevBtn">← 上一题</button>
+        <button id="subjNextBtn">下一题 →</button>
+      </div>
+      <div id="subjList"></div>
+      <div id="subjDetail" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- Announcement Modal -->
+  <div class="modal-overlay" id="announcementModal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-header">
+        <div class="modal-logo" style="display: flex; justify-content: center; align-items: center; min-height: 60px;">
+          <img src="_assets/logo.png" alt="Logo" style="height: 56px; width: 56px; border-radius: 12px; object-fit: cover;" onerror="this.style.display='none'; document.getElementById('modal-emoji-logo').style.display='block'"/>
+          <span id="modal-emoji-logo" style="display: none; font-size: 2.5rem;">📚</span>
+        </div>
+        <h2 class="modal-title">优学院课程题库</h2>
+        <p class="modal-subtitle">复习工具助手 · 免费分享</p>
+      </div>
+      <div class="modal-body">
+        <div class="info-box">
+          <div class="info-box-row">
+            <span>维护作者</span>
+            <span class="info-box-val">细雨初晴</span>
+          </div>
+          <div class="info-box-row">
+            <span>联系QQ</span>
+            <span class="info-box-val">1808666025</span>
+          </div>
+        </div>
+        <p class="modal-desc">
+          💡 本系统完全免费开放，欢迎题库投稿！如果您觉得有需要制作其他课程的题库，可以联系我。
+        </p>
+        <div class="modal-link-box" style="margin-bottom: 12px;">
+          <a class="modal-link" href="https://github.com/connectedGraph/ulearning-qbank" target="_blank">💻 connectedGraph/ulearning-qbank</a>
+          <div style="font-size: 0.7rem; color: var(--primary); margin-top: 3px; font-weight: 500;">本项目已开源在 GitHub，欢迎 Star! ⭐</div>
+        </div>
+        <div class="modal-link-box">
+          <a class="modal-link" href="https://6767.chat/qbank" target="_blank">🌐 6767.chat/qbank</a>
+          <div style="font-size: 0.7rem; color: var(--primary); margin-top: 3px; font-weight: 500;">优学院备用题库导航站</div>
+        </div>
+        <div class="qr-box">
+          <img class="qr-img" src="tip-code.png" alt="打赏收款码"/>
+          <p class="qr-tip">buy me a coffee? 😋</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span class="update-time">最后更新：2026-06-19</span>
+        <button class="modal-btn" onclick="closeModal()">知道了</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clipboard Toast -->
+  <div class="toast" id="clipboardToast">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px; height:16px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+    已成功复制 markdown 题库到剪贴板！
+  </div>
+
+  <script>
+    /*__DATA__*/
+    // Fallback if data not compiled
+    if (typeof DATA === 'undefined') {
+      window.DATA = { items: [], types: [], tags: [], subjective: [], markdown: "" };
+    }
+
+    const allItems = DATA.items || [];
+    const topTags = DATA.tags || [];
+    const subjChapters = DATA.subjective || [];
+
+    // Local Storage Keys
+    const TK = 'hist-theme';
+    const MK = 'hist-mem';
+    const BK = 'hist-batch';
+    const TMK = 'hist-mode';
+
+    // Global App States
+    let activeMode = 'browse';
+    let activeTag = '';
+    let activeBatch = -1;
+    let filtered = [];
+    let cursor = 0;
+    const PAGE = 20;
+
+    // Test Score State
+    let testAnswers = {}; // { qIndex: { selected: [label], correct: boolean } }
+
+    // ANKI States
+    let mem = {};
+    let ankiQueue = [];
+    let ankiIndex = 0;
+    let ankiConfig = {
+      range: 'all',
+      batch: 0,
+      mode: 'recite', // 'recite' or 'select'
+      order: 'random'
+    };
+    let currentAnkiItem = null;
+    let currentAnkiState = 'question'; // 'question', 'flipped'
+    let currentAnkiSelections = []; // multi choices selected on card front
+
+    // Subjective Mode States
+    let subjView = 'nav'; // 'nav', 'detail'
+    let subjCursor = 0;
+
+    // Dom Elements
+    const list = document.getElementById('list');
+    const tagsRow = document.getElementById('tagsRow');
+    const batchNav = document.getElementById('batchNav');
+    const stats = document.getElementById('stats');
+    const search = document.getElementById('search');
+    const clearBtn = document.getElementById('clearBtn');
+    const tagsToggle = document.getElementById('tagsToggle');
+
+    const listTest = document.getElementById('listTest');
+    const tagsRowTest = document.getElementById('tagsRowTest');
+    const batchNavTest = document.getElementById('batchNavTest');
+    const statsTest = document.getElementById('statsTest');
+    const searchTest = document.getElementById('searchTest');
+    const clearTestBtn = document.getElementById('clearTestBtn');
+    const tagsToggleTest = document.getElementById('tagsToggleTest');
+
+    const testScore = document.getElementById('testScore');
+    const testAccuracy = document.getElementById('testAccuracy');
+    const resetTestBtn = document.getElementById('resetTestBtn');
+
+    const themeBtn = document.getElementById('themeBtn');
+    const infoBtn = document.getElementById('infoBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const announcementModal = document.getElementById('announcementModal');
+    const clipboardToast = document.getElementById('clipboardToast');
+
+    const browseMode = document.getElementById('browseMode');
+    const testMode = document.getElementById('testMode');
+    const ankiMode = document.getElementById('ankiMode');
+    const subjectiveMode = document.getElementById('subjectiveMode');
+
+    // Load Memory Spaced Repetition progress
+    function loadMemProgress() {
+      mem = {};
+      try {
+        // Try loading hist-reviews
+        const rawReviews = localStorage.getItem('hist-reviews');
+        if (rawReviews) {
+          const parsed = JSON.parse(rawReviews);
+          for (const k in parsed) {
+            mem[k] = parsed[k]; // format: { level, ts }
+          }
+        }
+      } catch(_) {}
+      try {
+        // Try loading hist-mem
+        const rawMem = localStorage.getItem(MK);
+        if (rawMem) {
+          const parsed = JSON.parse(rawMem);
+          for (const k in parsed) {
+            if (typeof parsed[k] === 'number') {
+              // old format: timestamp only
+              if (!mem[k]) {
+                mem[k] = { level: 3, ts: parsed[k] }; // Default to level 3 (Good)
+              }
+            } else {
+              mem[k] = parsed[k];
+            }
+          }
+        }
+      } catch(_) {}
+    }
+
+    function saveMemProgress() {
+      try {
+        localStorage.setItem(MK, JSON.stringify(mem));
+      } catch(_) {}
+    }
+
+    function isMastered(index) {
+      const entry = mem[index];
+      if (!entry) return false;
+      return entry.level >= 3;
+    }
+
+    // Escaping helper
+    function esc(s) {
+      return String(s || '').replace(/[&<>"]/g, m => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;'
+      }[m]));
+    }
+
+    function renderMarkdown(str) {
+      if (!str) return '暂无';
+      // Escape HTML to prevent XSS
+      let html = esc(str);
+      
+      // Split into lines to parse lists and insert linebreaks
+      const lines = html.split('\n');
+      const result = [];
+      
+      for (let line of lines) {
+        let trimmed = line.trim();
+        
+        // 1. Unordered list item starts with * or - (e.g., "* **事件背景**：...")
+        const uListMatch = line.match(/^(\s*)[\*\-]\s+(.*)$/);
+        if (uListMatch) {
+          const indent = uListMatch[1].length;
+          const content = uListMatch[2];
+          const padding = indent * 10 + 12;
+          result.push(`<div style="padding-left: ${padding}px; text-indent: -12px; margin-bottom: 4px;">• ${content}</div>`);
+          continue;
+        }
+        
+        // 2. Ordered list item starts with number + dot (e.g., "1. xxx")
+        const oListMatch = line.match(/^(\s*)(\d+)\.\s+(.*)$/);
+        if (oListMatch) {
+          const indent = oListMatch[1].length;
+          const num = oListMatch[2];
+          const content = oListMatch[3];
+          const padding = indent * 10 + 14;
+          result.push(`<div style="padding-left: ${padding}px; text-indent: -14px; margin-bottom: 4px;">${num}. ${content}</div>`);
+          continue;
+        }
+        
+        // 3. Normal line
+        // Look for inline lists like "1. xxx 2. yyy" and replace with break
+        let lineProcessed = line.replace(/\s+(\d+)\.\s*/g, '<br>$1. ');
+        // Also split inline options like "A. xxx B. yyy"
+        lineProcessed = lineProcessed.replace(/\s+([A-D])\.\s*/g, '<br>$1. ');
+        
+        if (trimmed === '') {
+          result.push('<div style="height: 8px;"></div>');
+        } else {
+          result.push(`<div>${lineProcessed}</div>`);
+        }
+      }
+      
+      let finalHtml = result.join('');
+      
+      // Inline formatting:
+      // Bold: **text** -> <strong>text</strong>
+      finalHtml = finalHtml.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Italic: *text* -> <em>text</em>
+      finalHtml = finalHtml.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      
+      return finalHtml;
+    }
+
+    function norm(s) {
+      return String(s || '').toLowerCase().trim();
+    }
+
+    // Modal control
+    window.showModal = function() {
+      announcementModal.style.display = 'flex';
+      setTimeout(() => announcementModal.classList.add('show'), 10);
+    }
+    
+    window.closeModal = function() {
+      announcementModal.classList.remove('show');
+      setTimeout(() => announcementModal.style.display = 'none', 300);
+    }
+
+    infoBtn.onclick = showModal;
+
+    // Theme logic
+    function applyTheme(theme) {
+      const dark = theme === 'dark';
+      document.body.classList.toggle('dark', dark);
+      themeBtn.innerHTML = dark ? 
+        `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>` : 
+        `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>`;
+      try {
+        localStorage.setItem(TK, theme);
+      } catch(_) {}
+    }
+
+    themeBtn.onclick = () => {
+      applyTheme(document.body.classList.contains('dark') ? 'light' : 'dark');
+    };
+
+    // Copy to Clipboard
+    copyBtn.onclick = async () => {
+      const markdownContent = DATA.markdown || '';
+      if (!markdownContent) return;
+      try {
+        await navigator.clipboard.writeText(markdownContent);
+        showToast();
+      } catch (e) {
+        const textarea = document.createElement('textarea');
+        textarea.value = markdownContent;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast();
+      }
+    };
+
+    function showToast() {
+      clipboardToast.classList.add('show');
+      setTimeout(() => clipboardToast.classList.remove('show'), 2500);
+    }
+
+    // Toggle Tag Area Height
+    tagsToggle.onclick = () => {
+      const exp = tagsRow.classList.toggle('expanded');
+      tagsToggle.textContent = exp ? '收起标签' : '展开全部';
+    };
+    tagsToggleTest.onclick = () => {
+      const exp = tagsRowTest.classList.toggle('expanded');
+      tagsToggleTest.textContent = exp ? '收起标签' : '展开全部';
+    };
+
+    // Search and filters matches
+    function hit(item, q) {
+      if (/^q\d+$/i.test(q)) {
+        const num = parseInt(q.slice(1));
+        return item.index === num;
+      }
+      const hay = [
+        item.title,
+        item.typeTitle,
+        ...(item.canonical_tags || []),
+        ...(item.source_tags || [])
+      ].join(' ').toLowerCase();
+      return hay.includes(q);
+    }
+
+    // Rendering Tag Badges
+    function renderTags() {
+      const getHtml = (active) => topTags.map(t => {
+        const isActive = active === t.name ? 'active' : '';
+        return `<span class="bubble ${isActive}" data-tag="${esc(t.name)}">${esc(t.name)} <span style="opacity:.6; font-size: 0.7rem;">${t.count}</span></span>`;
+      }).join('');
+
+      tagsRow.innerHTML = getHtml(activeTag);
+      tagsRowTest.innerHTML = getHtml(activeTag);
+
+      const bindClicks = (container) => {
+        container.querySelectorAll('.bubble').forEach(el => {
+          el.onclick = () => {
+            const clicked = el.dataset.tag;
+            activeTag = activeTag === clicked ? '' : clicked;
+            search.value = activeTag;
+            searchTest.value = activeTag;
+            applyFilter();
+          };
+        });
+      };
+      bindClicks(tagsRow);
+      bindClicks(tagsRowTest);
+    }
+
+    // Rendering Batch Segmentation Buttons
+    function renderBatchNav() {
+      const total = allItems.length;
+      const count = Math.ceil(total / 50);
+      let html = '';
+      for (let i = 0; i < count; i++) {
+        const start = i * 50 + 1;
+        const end = Math.min((i + 1) * 50, total);
+        const isActive = activeBatch === i ? 'active' : '';
+        html += `<button class="batch-btn ${isActive}" data-batch="${i}">Q${start}-${end}</button>`;
+      }
+      batchNav.innerHTML = html;
+      batchNavTest.innerHTML = html;
+
+      const bindClicks = (container) => {
+        container.querySelectorAll('.batch-btn').forEach(el => {
+          el.onclick = () => {
+            const b = parseInt(el.dataset.batch);
+            activeBatch = activeBatch === b ? -1 : b;
+            try {
+              localStorage.setItem(BK, activeBatch);
+            } catch(_) {}
+            applyFilter();
+          };
+        });
+      };
+      bindClicks(batchNav);
+      bindClicks(batchNavTest);
+    }
+
+    // Rendering Questions Cards in Browse Mode
+    function questionCard(item) {
+      const isMem = isMastered(item.index) ? '<span class="memorized-badge" title="ANKI已掌握">✓</span>' : '';
+      const typeClass = item.typeTitle.includes('单选') ? 'type-single' : 
+                        item.typeTitle.includes('多选') ? 'type-multi' : 
+                        item.typeTitle.includes('判断') ? 'type-judge' : 'type-other';
+      
+      const ans = (item.answer || '').toUpperCase();
+      const opts = (item.options || []).map(opt => {
+        const isCorrect = ans.includes(opt.label) ? 'correct-answer' : '';
+        return `
+          <div class="opt ${isCorrect}">
+            <span class="opt-label">${esc(opt.label)}</span>
+            <span class="opt-text">${esc(opt.text)}</span>
+          </div>
+        `;
+      }).join('');
+
+      const tags = (item.canonical_tags || []).map(t => `<span class="micro" data-tag="${esc(t)}">${esc(t)}</span>`).join('');
+
+      return `
+        <div class="card">
+          <div class="card-meta">
+            <span class="card-index">Q${item.index}${isMem}</span>
+            <span class="card-type ${typeClass}">${esc(item.typeTitle)}</span>
+          </div>
+          <div class="card-title">${esc(item.title)}</div>
+          ${opts ? `<div class="card-options">${opts}</div>` : ''}
+          <div class="answer-container">
+            <div class="card-answer">${esc(item.answer || '待确认')}</div>
+          </div>
+          ${item.analysis ? `
+            <details class="card-detail">
+              <summary>解析</summary>
+              <div class="analysis-text">${renderMarkdown(item.analysis)}</div>
+            </details>
+          ` : ''}
+          ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        </div>
+      `;
+    }
+
+    // Rendering Questions Cards in Test Mode
+    function testCard(item) {
+      const typeClass = item.typeTitle.includes('单选') ? 'type-single' : 
+                        item.typeTitle.includes('多选') ? 'type-multi' : 
+                        item.typeTitle.includes('判断') ? 'type-judge' : 'type-other';
+      const isMulti = item.typeTitle.includes('多选');
+      
+      const savedAns = testAnswers[item.index];
+      const ans = (item.answer || '').toUpperCase();
+
+      const opts = (item.options || []).map(opt => {
+        let stateClass = '';
+        if (savedAns) {
+          const selected = savedAns.selected.includes(opt.label);
+          const isCorrect = ans.includes(opt.label);
+          if (selected && isCorrect) stateClass = 'test-correct';
+          else if (selected && !isCorrect) stateClass = 'test-incorrect';
+          else if (!selected && isCorrect) stateClass = 'test-correct'; // Reveal correct
+        }
+        
+        return `
+          <div class="opt ${stateClass}" data-label="${esc(opt.label)}" onclick="handleTestSelect(this, ${item.index}, '${esc(opt.label)}', ${isMulti})">
+            <span class="opt-label">${esc(opt.label)}</span>
+            <span class="opt-text">${esc(opt.text)}</span>
+          </div>
+        `;
+      }).join('');
+
+      const tags = (item.canonical_tags || []).map(t => `<span class="micro" data-tag="${esc(t)}">${esc(t)}</span>`).join('');
+
+      // Show answer and details only if answered
+      const revealedHtml = savedAns ? `
+        <div class="answer-container">
+          <div class="card-answer">${esc(item.answer)}</div>
+        </div>
+        ${item.analysis ? `
+          <details class="card-detail" open>
+            <summary>解析</summary>
+            <div class="analysis-text">${renderMarkdown(item.analysis)}</div>
+          </details>
+        ` : ''}
+      ` : `
+        ${isMulti ? `<button class="submit-test-btn" id="submitTest-${item.index}" onclick="submitMultiTest(${item.index})">提交答案</button>` : ''}
+        <div class="answer-container" style="display:none">
+          <div class="card-answer"></div>
+        </div>
+      `;
+
+      return `
+        <div class="card hide-answer" id="testCard-${item.index}">
+          <div class="card-meta">
+            <span class="card-index">Q${item.index}</span>
+            <span class="card-type ${typeClass}">${esc(item.typeTitle)}</span>
+          </div>
+          <div class="card-title">${esc(item.title)}</div>
+          ${opts ? `<div class="card-options">${opts}</div>` : ''}
+          <div class="test-reveal-area">${revealedHtml}</div>
+          ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        </div>
+      `;
+    }
+
+    // Click behavior for Options in Self-Test Mode
+    window.handleTestSelect = function(element, qIndex, optionLabel, isMulti) {
+      // If already answered, do nothing
+      if (testAnswers[qIndex]) return;
+
+      if (!isMulti) {
+        // Single choice or true/false: Select is submit
+        const item = allItems.find(x => x.index === qIndex);
+        const correctAns = (item.answer || '').toUpperCase();
+        const correct = correctAns.includes(optionLabel);
+
+        testAnswers[qIndex] = {
+          selected: [optionLabel],
+          correct: correct
+        };
+
+        // Render response immediately
+        const cardEl = document.getElementById(`testCard-${qIndex}`);
+        cardEl.querySelectorAll('.opt').forEach(opt => {
+          const l = opt.dataset.label;
+          const isCorrect = correctAns.includes(l);
+          if (l === optionLabel) {
+            opt.classList.add(correct ? 'test-correct' : 'test-incorrect');
+          } else if (isCorrect) {
+            opt.classList.add('test-correct');
+          }
+        });
+
+        // Show answer & explanation
+        const revealArea = cardEl.querySelector('.test-reveal-area');
+        revealArea.innerHTML = `
+          <div class="answer-container">
+            <div class="card-answer">${esc(item.answer)}</div>
+          </div>
+          ${item.analysis ? `
+            <details class="card-detail" open>
+              <summary>解析</summary>
+              <div class="analysis-text">${renderMarkdown(item.analysis)}</div>
+            </details>
+          ` : ''}
+        `;
+
+        updateTestScore();
+      } else {
+        // Multi choice: Toggle selection state
+        element.classList.toggle('test-selected');
+      }
+    };
+
+    window.submitMultiTest = function(qIndex) {
+      if (testAnswers[qIndex]) return;
+      
+      const cardEl = document.getElementById(`testCard-${qIndex}`);
+      const selectedOpts = [];
+      cardEl.querySelectorAll('.opt.test-selected').forEach(opt => {
+        selectedOpts.push(opt.dataset.label);
+      });
+
+      if (selectedOpts.length === 0) {
+        alert("请先选择选项！");
+        return;
+      }
+
+      const item = allItems.find(x => x.index === qIndex);
+      const correctAns = (item.answer || '').toUpperCase();
+      
+      // Check if selected options perfectly match correct answer
+      let correct = true;
+      const answersList = correctAns.split(/[^A-Z]+/).filter(Boolean); // e.g. ["A", "B"]
+      
+      // Verify lengths and options
+      if (selectedOpts.length !== answersList.length) {
+        correct = false;
+      } else {
+        selectedOpts.forEach(s => {
+          if (!answersList.includes(s)) correct = false;
+        });
+      }
+
+      testAnswers[qIndex] = {
+        selected: selectedOpts,
+        correct: correct
+      };
+
+      // Style options
+      cardEl.querySelectorAll('.opt').forEach(opt => {
+        opt.classList.remove('test-selected');
+        const l = opt.dataset.label;
+        const isSelected = selectedOpts.includes(l);
+        const isCorrect = answersList.includes(l);
+        if (isSelected && isCorrect) opt.classList.add('test-correct');
+        else if (isSelected && !isCorrect) opt.classList.add('test-incorrect');
+        else if (!isSelected && isCorrect) opt.classList.add('test-correct');
+      });
+
+      // Show details
+      const revealArea = cardEl.querySelector('.test-reveal-area');
+      revealArea.innerHTML = `
+        <div class="answer-container">
+          <div class="card-answer">${esc(item.answer)}</div>
+        </div>
+        ${item.analysis ? `
+          <details class="card-detail" open>
+            <summary>解析</summary>
+            <div class="analysis-text">${renderMarkdown(item.analysis)}</div>
+          </details>
+        ` : ''}
+      `;
+
+      updateTestScore();
+    };
+
+    // Calculate score in Self-Test Mode
+    function updateTestScore() {
+      const totalAnswered = Object.keys(testAnswers).length;
+      let correctCount = 0;
+      for (const k in testAnswers) {
+        if (testAnswers[k].correct) correctCount++;
+      }
+      testScore.textContent = `${correctCount} / ${totalAnswered}`;
+      testAccuracy.textContent = totalAnswered > 0 ? `${Math.round((correctCount / totalAnswered) * 100)}%` : '0%';
+    }
+
+    resetTestBtn.onclick = () => {
+      if (confirm("确定要清空当前的自测记录，重新开始吗？")) {
+        testAnswers = {};
+        updateTestScore();
+        applyFilter();
+      }
+    };
+
+    // Apply Filters & Render list views
+    function applyFilter() {
+      const q = norm(search.value || searchTest.value);
+      clearBtn.classList.toggle('show', !!q);
+      clearTestBtn.classList.toggle('show', !!q);
+
+      // Highlight active tags
+      tagsRow.querySelectorAll('.bubble').forEach(el => el.classList.toggle('active', el.dataset.tag === activeTag));
+      tagsRowTest.querySelectorAll('.bubble').forEach(el => el.classList.toggle('active', el.dataset.tag === activeTag));
+
+      // Highlight active batch navigation
+      batchNav.querySelectorAll('.batch-btn').forEach(el => el.classList.toggle('active', parseInt(el.dataset.batch) === activeBatch));
+      batchNavTest.querySelectorAll('.batch-btn').forEach(el => el.classList.toggle('active', parseInt(el.dataset.batch) === activeBatch));
+
+      filtered = allItems.filter(item => {
+        const qok = !q || hit(item, q);
+        const tok = !activeTag || (item.canonical_tags || []).includes(activeTag) || (item.source_tags || []).includes(activeTag);
+        const bok = activeBatch < 0 || ((item.index > activeBatch * 50) && (item.index <= (activeBatch + 1) * 50));
+        return qok && tok && bok;
+      });
+
+      cursor = 0;
+      list.innerHTML = '';
+      listTest.innerHTML = '';
+
+      renderStats();
+      renderMore();
+    }
+
+    function renderStats() {
+      const chipsHtml = typeInfoHtml();
+      stats.innerHTML = `<span class="stats-left">共匹配 ${filtered.length} 题 / 总库 ${allItems.length} 题</span><div class="stats-chips">${chipsHtml}</div>`;
+      statsTest.innerHTML = `<span class="stats-left">共匹配 ${filtered.length} 题 / 总库 ${allItems.length} 题</span><div class="stats-chips">${chipsHtml}</div>`;
+    }
+
+    function typeInfoHtml() {
+      const counts = {};
+      filtered.forEach(x => {
+        counts[x.typeTitle] = (counts[x.typeTitle] || 0) + 1;
+      });
+      return Object.keys(counts).map(k => `<span class="chip">${esc(k)}: ${counts[k]}</span>`).join('');
+    }
+
+    // Infinite Scrolling
+    function renderMore() {
+      const targetList = activeMode === 'browse' ? list : listTest;
+      const slice = filtered.slice(cursor, cursor + PAGE);
+      
+      if (!slice.length && !targetList.children.length) {
+        targetList.innerHTML = '<div class="card" style="text-align:center;color:var(--text-muted)">没有找到匹配的题目</div>';
+        return;
+      }
+
+      const html = slice.map((item, i) => {
+        const currentIdx = cursor + i;
+        const insertDivider = currentIdx > 0 && currentIdx % 50 === 0;
+        const dividerHtml = insertDivider ? `<div class="divider"><span>第 ${Math.floor(currentIdx/50)*50+1}-${Math.min(Math.floor(currentIdx/50)*50+50, filtered.length)} 题</span></div>` : '';
+        return dividerHtml + (activeMode === 'browse' ? questionCard(item) : testCard(item));
+      }).join('');
+
+      targetList.insertAdjacentHTML('beforeend', html);
+      cursor += slice.length;
+
+      // Bind tags inside cards to act as filters
+      targetList.querySelectorAll('.micro').forEach(el => {
+        el.onclick = (e) => {
+          e.stopPropagation();
+          activeTag = el.dataset.tag;
+          search.value = activeTag;
+          searchTest.value = activeTag;
+          applyFilter();
+        };
+      });
+    }
+
+    // Search events
+    search.oninput = () => { activeTag = ''; applyFilter(); };
+    searchTest.oninput = () => { activeTag = ''; applyFilter(); };
+    clearBtn.onclick = () => { activeTag = ''; search.value = ''; searchTest.value = ''; applyFilter(); };
+    clearTestBtn.onclick = () => { activeTag = ''; search.value = ''; searchTest.value = ''; applyFilter(); };
+
+    // Intersection observers for infinite loading
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting) && activeMode === 'browse') renderMore();
+    }, { rootMargin: '300px' });
+    observer.observe(document.getElementById('sentinel'));
+
+    const observerTest = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting) && activeMode === 'test') renderMore();
+    }, { rootMargin: '300px' });
+    observerTest.observe(document.getElementById('sentinelTest'));
+
+    // TAB CONTROLLER
+    document.querySelectorAll('.mode-tab').forEach(tab => {
+      tab.onclick = () => {
+        const prevMode = activeMode;
+        activeMode = tab.dataset.mode;
+        
+        document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Hide all screens
+        browseMode.style.display = 'none';
+        testMode.style.display = 'none';
+        ankiMode.style.display = 'none';
+        subjectiveMode.style.display = 'none';
+
+        // Show active screen
+        if (activeMode === 'browse') {
+          browseMode.style.display = '';
+          applyFilter();
+        } else if (activeMode === 'test') {
+          testMode.style.display = '';
+          applyFilter();
+        } else if (activeMode === 'anki') {
+          ankiMode.style.display = '';
+          showAnkiDashboard();
+        } else if (activeMode === 'subjective') {
+          subjectiveMode.style.display = '';
+          renderSubjective();
+        }
+
+        try {
+          localStorage.setItem(TMK, activeMode);
+        } catch(_) {}
+      };
+    });
+
+
+    // ==========================================
+    //             ANKI SYSTEM UPGRADE
+    // ==========================================
+
+    const ankiDashboardEl = document.getElementById('ankiDashboard');
+    const ankiArenaEl = document.getElementById('ankiArena');
+    const ankiProgressBar = document.getElementById('ankiProgressBar');
+    const ankiProgressText = document.getElementById('ankiProgressText');
+    const ankiCardInner = document.getElementById('ankiCardInner');
+    const startAnkiBtn = document.getElementById('startAnkiBtn');
+    const exitAnkiBtn = document.getElementById('exitAnkiBtn');
+    const resetAnkiProgressBtn = document.getElementById('resetAnkiProgressBtn');
+    const ankiRangeSelect = document.getElementById('ankiRangeSelect');
+    const ankiBatchGroup = document.getElementById('ankiBatchGroup');
+    const ankiBatchSelect = document.getElementById('ankiBatchSelect');
+    
+    // ANKI Option groups logic
+    function setupAnkiSettings() {
+      // Build batch select options
+      const total = allItems.length;
+      const count = Math.ceil(total / 50);
+      let batchOpts = '';
+      for (let i = 0; i < count; i++) {
+        const start = i * 50 + 1;
+        const end = Math.min((i + 1) * 50, total);
+        batchOpts += `<option value="${i}">Q${start}-${end}</option>`;
+      }
+      ankiBatchSelect.innerHTML = batchOpts;
+
+      ankiRangeSelect.onchange = () => {
+        ankiConfig.range = ankiRangeSelect.value;
+        ankiBatchGroup.style.display = ankiConfig.range === 'batch' ? '' : 'none';
+      };
+
+      ankiBatchSelect.onchange = () => {
+        ankiConfig.batch = parseInt(ankiBatchSelect.value);
+      };
+
+      // Button group selectors
+      const setupButtonGroup = (groupId, configKey) => {
+        const group = document.getElementById(groupId);
+        group.querySelectorAll('.anki-btn-group-option').forEach(opt => {
+          opt.onclick = () => {
+            group.querySelectorAll('.anki-btn-group-option').forEach(o => o.classList.remove('active'));
+            opt.classList.add('active');
+            ankiConfig[configKey] = opt.dataset.val;
+          };
+        });
+      };
+      
+      setupButtonGroup('ankiModeGroup', 'mode');
+      setupButtonGroup('ankiOrderGroup', 'order');
+    }
+
+    // Show ANKI Dashboard with Stats
+    function showAnkiDashboard() {
+      loadMemProgress();
+      ankiDashboardEl.style.display = 'grid';
+      ankiArenaEl.style.display = 'none';
+
+      // Compute stats
+      const total = allItems.length;
+      let masteredCount = 0;
+      let reviewCount = 0;
+      let newCount = 0;
+
+      allItems.forEach(item => {
+        const entry = mem[item.index];
+        if (!entry) {
+          newCount++;
+        } else if (entry.level >= 3) {
+          masteredCount++;
+        } else {
+          reviewCount++;
+        }
+      });
+
+      document.getElementById('ankiCountNew').textContent = newCount;
+      document.getElementById('ankiCountReview').textContent = reviewCount;
+      document.getElementById('ankiCountMastered').textContent = masteredCount;
+
+      const rate = total > 0 ? Math.round((masteredCount / total) * 100) : 0;
+      document.getElementById('ankiMasteryRate').textContent = `${rate}%`;
+
+      // Update circular progress ring
+      const circle = document.getElementById('ankiCircleProgress');
+      const radius = circle.r.baseVal.value;
+      const circumference = radius * 2 * Math.PI;
+      circle.style.strokeDasharray = `${circumference} ${circumference}`;
+      
+      const offset = circumference - (rate / 100) * circumference;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    // Reset Progress
+    resetAnkiProgressBtn.onclick = () => {
+      if (confirm("🚨 警告：这将会清空所有的 ANKI 记忆卡片掌握进度，重新开始！\n确定要继续吗？")) {
+        mem = {};
+        localStorage.removeItem(MK);
+        localStorage.removeItem('hist-reviews');
+        showAnkiDashboard();
+      }
+    };
+
+    // Start ANKI Session
+    startAnkiBtn.onclick = () => {
+      ankiQueue = [];
+      
+      // 1. Filter items by range
+      let pool = [];
+      if (ankiConfig.range === 'all') {
+        pool = [...allItems];
+      } else if (ankiConfig.range === 'batch') {
+        const b = ankiConfig.batch;
+        pool = allItems.filter(item => item.index > b * 50 && item.index <= (b + 1) * 50);
+      } else if (ankiConfig.range === 'unmastered') {
+        pool = allItems.filter(item => !isMastered(item.index));
+      }
+
+      // If unmastered mode selected but all mastered, fall back to all
+      if (pool.length === 0) {
+        alert("所选范围内暂无卡片！已自动重置为全部卡片。");
+        pool = [...allItems];
+      }
+
+      // 2. Order items
+      if (ankiConfig.order === 'random') {
+        ankiQueue = pool.sort(() => Math.random() - 0.5);
+      } else {
+        ankiQueue = pool.sort((a, b) => a.index - b.index);
+      }
+
+      ankiIndex = 0;
+      ankiDashboardEl.style.display = 'none';
+      ankiArenaEl.style.display = 'block';
+
+      renderAnkiCard();
+    };
+
+    // Exit ANKI Session
+    exitAnkiBtn.onclick = () => {
+      if (confirm("确定要退出当前的 ANKI 复习过程吗？本次进度的更改已被自动保存。")) {
+        showAnkiDashboard();
+      }
+    };
+
+    // Flip Card Transition helper
+    function executeFlip(action) {
+      ankiCardInner.classList.add('flipping');
+      setTimeout(() => {
+        action();
+        ankiCardInner.classList.remove('flipping');
+      }, 200);
+    }
+
+    // Render active ANKI Card
+    function renderAnkiCard() {
+      currentAnkiSelections = [];
+      
+      if (ankiIndex >= ankiQueue.length) {
+        // Queue empty! Done!
+        ankiCardInner.innerHTML = `
+          <div style="text-align:center; padding: 40px 0;">
+            <div style="font-size: 3rem; margin-bottom: 16px;">🎉</div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">完美复习完成！</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px;">你已经处理完了本轮所有的卡片。</p>
+            <button class="submit-test-btn" onclick="showAnkiDashboard()" style="margin: 0 auto; display: block; padding: 10px 24px;">返回面板</button>
+          </div>
+        `;
+        ankiProgressText.textContent = `${ankiQueue.length} / ${ankiQueue.length}`;
+        ankiProgressBar.style.width = '100%';
+        return;
+      }
+
+      currentAnkiItem = ankiQueue[ankiIndex];
+      currentAnkiState = 'question';
+
+      // Progress indicators
+      ankiProgressText.textContent = `${ankiIndex + 1} / ${ankiQueue.length}`;
+      const percentage = (ankiIndex / ankiQueue.length) * 100;
+      ankiProgressBar.style.width = `${percentage}%`;
+
+      const item = currentAnkiItem;
+      const isMem = isMastered(item.index) ? '<span class="memorized-badge" title="已掌握">✓</span>' : '';
+      const typeClass = item.typeTitle.includes('单选') ? 'type-single' : 
+                        item.typeTitle.includes('多选') ? 'type-multi' : 
+                        item.typeTitle.includes('判断') ? 'type-judge' : 'type-other';
+
+      const hasOptions = item.options && item.options.length > 0;
+      const isMulti = item.typeTitle.includes('多选');
+
+      let optionsHtml = '';
+      if (hasOptions) {
+        optionsHtml = `<div class="anki-options-area">`;
+        optionsHtml += item.options.map(opt => {
+          if (ankiConfig.mode === 'select') {
+            return `
+              <div class="opt" data-label="${esc(opt.label)}" onclick="handleAnkiSelect(this, '${esc(opt.label)}', ${isMulti})">
+                <span class="opt-label">${esc(opt.label)}</span>
+                <span class="opt-text">${esc(opt.text)}</span>
+              </div>
+            `;
+          } else {
+            return `
+              <div class="opt" style="cursor: default;">
+                <span class="opt-label">${esc(opt.label)}</span>
+                <span class="opt-text">${esc(opt.text)}</span>
+              </div>
+            `;
+          }
+        }).join('');
+        
+        if (ankiConfig.mode === 'select' && isMulti) {
+          optionsHtml += `<button class="submit-test-btn" id="ankiSubmitMultiBtn" onclick="submitAnkiMultiChoice()" style="margin-top:10px; width: 100%;">确认选择</button>`;
+        }
+        
+        optionsHtml += `</div>`;
+      }
+
+      const showRevealBtn = ankiConfig.mode === 'recite' || !hasOptions || isMulti;
+
+      ankiCardInner.innerHTML = `
+        <div class="anki-q-header">
+          <span>Q${item.index}${isMem}</span>
+          <span class="card-type ${typeClass}">${esc(item.typeTitle)}</span>
+        </div>
+        <div class="anki-q-body">${esc(item.title)}</div>
+        ${optionsHtml}
+        ${showRevealBtn ? `<button class="anki-reveal-btn" id="revealAnkiBtn" onclick="revealAnkiAnswer()">显示答案与解析</button>` : ''}
+      `;
+    }
+
+    // Handles multiple-choice option clicks on ANKI card front
+    window.handleAnkiSelect = function(element, optionLabel, isMulti) {
+      if (currentAnkiState !== 'question') return;
+      
+      if (!isMulti) {
+        // Single option select -> automatically submit & reveal
+        currentAnkiSelections = [optionLabel];
+        revealAnkiAnswer();
+      } else {
+        // Multi choice select -> toggle local selection
+        element.classList.toggle('test-selected');
+      }
+    };
+
+    window.submitAnkiMultiChoice = function() {
+      if (currentAnkiState !== 'question') return;
+      
+      currentAnkiSelections = [];
+      ankiCardInner.querySelectorAll('.opt.test-selected').forEach(opt => {
+        currentAnkiSelections.push(opt.dataset.label);
+      });
+
+      if (currentAnkiSelections.length === 0) {
+        alert("请先选择选项！");
+        return;
+      }
+      
+      revealAnkiAnswer();
+    };
+
+    // Reveals Answer card (flipping card)
+    window.revealAnkiAnswer = function() {
+      executeFlip(() => {
+        currentAnkiState = 'flipped';
+        const item = currentAnkiItem;
+        const ans = (item.answer || '').toUpperCase();
+        const answersList = ans.split('').filter(c => /[A-Z]/.test(c));
+        const isMem = isMastered(item.index) ? '<span class="memorized-badge">✓</span>' : '';
+        const typeClass = item.typeTitle.includes('单选') ? 'type-single' : 
+                          item.typeTitle.includes('多选') ? 'type-multi' : 
+                          item.typeTitle.includes('判断') ? 'type-judge' : 'type-other';
+
+        // Options html showing correct / incorrect coloring
+        let optionsHtml = '';
+        if (item.options && item.options.length > 0) {
+          optionsHtml = `<div class="card-options">`;
+          optionsHtml += item.options.map(opt => {
+            const isCorrect = answersList.includes(opt.label);
+            const isSelected = currentAnkiSelections.includes(opt.label);
+            
+            let status = '';
+            if (ankiConfig.mode === 'select' && currentAnkiSelections.length > 0) {
+              if (isSelected && isCorrect) status = 'test-correct';
+              else if (isSelected && !isCorrect) status = 'test-incorrect';
+              else if (!isSelected && isCorrect) status = 'test-correct';
+            } else {
+              // Recitation mode: just show correct ones
+              if (isCorrect) status = 'correct-answer';
+            }
+
+            return `
+              <div class="opt ${status}">
+                <span class="opt-label">${esc(opt.label)}</span>
+                <span class="opt-text">${esc(opt.text)}</span>
+              </div>
+            `;
+          }).join('');
+          optionsHtml += `</div>`;
+        }
+
+        ankiCardInner.innerHTML = `
+          <div class="anki-q-header">
+            <span>Q${item.index}${isMem}</span>
+            <span class="card-type ${typeClass}">${esc(item.typeTitle)}</span>
+          </div>
+          <div class="card-title" style="text-align:left; font-size: 0.95rem;">${esc(item.title)}</div>
+          ${optionsHtml}
+          <div class="answer-container" style="text-align:left;">
+            <div class="card-answer">${esc(item.answer)}</div>
+          </div>
+          ${item.analysis ? `
+            <div class="card-detail" style="text-align:left;">
+              <div style="font-size:0.75rem; font-weight:700; color:var(--primary); margin-bottom: 4px;">解析</div>
+              <div class="analysis-text" style="margin-top:0;">${renderMarkdown(item.analysis)}</div>
+            </div>
+          ` : ''}
+          
+          <div class="anki-rating-btns">
+            <button class="anki-rate-btn again" onclick="rateAnki(1)">
+              <span>没记住</span>
+              <span class="anki-rate-interval">&lt;1分</span>
+            </button>
+            <button class="anki-rate-btn hard" onclick="rateAnki(2)">
+              <span>模糊</span>
+              <span class="anki-rate-interval">6分</span>
+            </button>
+            <button class="anki-rate-btn good" onclick="rateAnki(3)">
+              <span>记住</span>
+              <span class="anki-rate-interval">1天</span>
+            </button>
+            <button class="anki-rate-btn easy" onclick="rateAnki(4)">
+              <span>简单</span>
+              <span class="anki-rate-interval">4天</span>
+            </button>
+          </div>
+        `;
+      });
+    };
+
+    // ANKI Spaced Repetition Rating Action
+    window.rateAnki = function(level) {
+      const item = currentAnkiItem;
+      const now = Date.now();
+      
+      // Update local storage status
+      mem[item.index] = { level: level, ts: now };
+      saveMemProgress();
+
+      if (level < 3) {
+        // "Again" (1) or "Hard" (2): Re-enqueue the card to the back of current queue
+        // so the user has to review it again until they succeed
+        const failItem = ankiQueue.splice(ankiIndex, 1)[0];
+        
+        // Push slightly back or to the very end
+        if (ankiQueue.length > 5) {
+          // Insert 4-5 cards down to keep it fresh but not too far
+          ankiQueue.splice(ankiIndex + 4, 0, failItem);
+        } else {
+          ankiQueue.push(failItem);
+        }
+        
+        // Since we spliced one and didn't remove it permanently, ankiIndex stays the same.
+      } else {
+        // "Good" (3) or "Easy" (4): Card mastered for this session, remove from queue
+        ankiIndex++;
+      }
+
+      executeFlip(() => {
+        renderAnkiCard();
+      });
+    };
+
+
+    // ==========================================
+    //            SUBJECTIVE QUESTIONS
+    // ==========================================
+
+    const subjList = document.getElementById('subjList');
+    const subjDetail = document.getElementById('subjDetail');
+    const subjNavHeader = document.getElementById('subjNavHeader');
+    const subjBackBtn = document.getElementById('subjBackBtn');
+    const subjPrevBtn = document.getElementById('subjPrevBtn');
+    const subjNextBtn = document.getElementById('subjNextBtn');
+
+    function renderSubjective() {
+      if (subjView === 'nav') {
+        subjList.style.display = 'block';
+        subjDetail.style.display = 'none';
+        subjNavHeader.style.display = 'none';
+
+        if (!subjChapters.length) {
+          subjList.innerHTML = '<div class="card" style="text-align:center;color:var(--text-muted)">无主观题题库数据</div>';
+          return;
+        }
+
+        subjList.innerHTML = `
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 12px; padding: 0 4px; text-transform: uppercase;">主观题目录 (${subjChapters.length} 章节)</div>
+        ` + subjChapters.map((ch, idx) => `
+          <div class="card subj-chapter-card" onclick="openSubjectiveDetail(${idx})">
+            <div class="subj-chapter-title">${ch.id || ch.page_range || ''}. ${esc(ch.title)}</div>
+            ${ch.summary ? `<div class="subj-chapter-desc">${esc(ch.summary)}</div>` : ''}
+          </div>
+        `).join('');
+      } else {
+        subjList.style.display = 'none';
+        subjDetail.style.display = 'block';
+        subjNavHeader.style.display = 'flex';
+
+        const ch = subjChapters[subjCursor];
+        const sectionsHtml = (ch.sections || []).map(sec => `
+          <div class="subj-section">
+            <div class="subj-section-heading">${esc(sec.heading)}</div>
+            ${sec.content ? `<div class="subj-section-content">${esc(sec.content)}</div>` : ''}
+            ${sec.sub_points && sec.sub_points.length ? `
+              <ul class="subj-points">
+                ${sec.sub_points.map(p => `<li>${esc(p)}</li>`).join('')}
+              </ul>
+            ` : ''}
+          </div>
+        `).join('');
+
+        subjDetail.innerHTML = `
+          <div class="card">
+            <div class="card-meta">
+              <span class="card-index">${ch.id || ch.page_range || ''}</span>
+            </div>
+            <h2 style="font-size: 1.15rem; font-weight: 800; line-height: 1.4; color: var(--text); margin-bottom: 8px;">${esc(ch.title)}</h2>
+            ${ch.summary ? `<div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">${esc(ch.summary)}</div>` : ''}
+            <div style="border-top: 1px dashed var(--border); padding-top: 10px;">
+              ${sectionsHtml}
+            </div>
+          </div>
+        `;
+
+        subjPrevBtn.disabled = subjCursor === 0;
+        subjNextBtn.disabled = subjCursor >= subjChapters.length - 1;
+      }
+    }
+
+    window.openSubjectiveDetail = function(idx) {
+      subjCursor = idx;
+      subjView = 'detail';
+      renderSubjective();
+      window.scrollTo(0, 0);
+    };
+
+    subjBackBtn.onclick = () => {
+      subjView = 'nav';
+      renderSubjective();
+    };
+
+    subjPrevBtn.onclick = () => {
+      if (subjCursor > 0) {
+        subjCursor--;
+        renderSubjective();
+        window.scrollTo(0, 0);
+      }
+    };
+
+    subjNextBtn.onclick = () => {
+      if (subjCursor < subjChapters.length - 1) {
+        subjCursor++;
+        renderSubjective();
+        window.scrollTo(0, 0);
+      }
+    };
+
+
+    // ==========================================
+    //            INIT / LIFECYCLE
+    // ==========================================
+
+    let savedTheme = 'light';
+    try {
+      savedTheme = localStorage.getItem(TK) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch(_) {}
+    applyTheme(savedTheme);
+
+    try {
+      const savedBatch = localStorage.getItem(BK);
+      if (savedBatch !== null) activeBatch = parseInt(savedBatch);
+    } catch(_) {}
+
+    loadMemProgress();
+    renderTags();
+    renderBatchNav();
+    setupAnkiSettings();
+
+    // Recover last visited tab/mode
+    let savedMode = 'browse';
+    try {
+      savedMode = localStorage.getItem(TMK) || 'browse';
+    } catch(_) {}
+    
+    // Simulate tab click
+    const activeTabButton = document.querySelector(`.mode-tab[data-mode="${savedMode}"]`);
+    if (activeTabButton) {
+      activeTabButton.click();
+    } else {
+      applyFilter();
+    }
+  </script>
+</body>
+</html>

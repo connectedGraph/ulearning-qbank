@@ -1,0 +1,31 @@
+# User configuration with real credentials
+/config.json
+
+# Downloaded paper data
+/papers_json/
+
+# Generated question banks (root level only)
+/question_bank.md
+/question_bank.json
+/batch_results.jsonl
+/batch_results.md
+/title_tags.jsonl
+/final_answers.html
+/subjective.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,31 @@
+{
+  "authorization": "",
+  "examId": "",
+  "examUserId": "",
+  "traceId": "",
+  "paper_range": {
+    "start_id": 0,
+    "end_id": 0
+  },
+  "rate_limiting": {
+    "delay_seconds": 1.0
+  },
+  "openai": {
+    "base_url": "http://127.0.0.1:8081/v1",
+    "api_key": "sk-gemini-local",
+    "model": "gemini-flash-lite",
+    "rpm": 30,
+    "concurrency": 6
+  },
+  "paths": {
+    "papers_dir": "papers_json",
+    "question_bank_json": "question_bank.json",
+    "question_bank_md": "question_bank.md",
+    "batch_results_jsonl": "batch_results.jsonl",
+    "batch_results_md": "batch_results.md",
+    "title_tags_jsonl": "title_tags.jsonl",
+    "subjective_json": "subjective.json",
+    "final_html": "final_answers.html"
+  }
+}
+

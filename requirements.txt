@@ -1,0 +1,33 @@
+# Python 依赖说明 / Dependencies
+
+本项目默认仅使用 Python 标准库，无需安装任何第三方依赖。
+
+但是，如果您想要在构建 HTML 题库视图（viewer_builder.py）时自动进行中文分词并提取标签，建议安装以下依赖包：
+
+```bash
+pip install jieba
+```
+
+## 使用的标准库模块 / Standard Library Modules Used:
+
+- `json` - JSON 数据解析和生成
+- `urllib.request`, `urllib.parse` - HTTP 请求
+- `ssl` - SSL 上下文
+- `html` - HTML 实体解码
+- `time` - 延迟控制
+- `os` - 文件和目录操作
+- `sys` - 系统路径操作
+- `collections.Counter` - 统计计数
+- `concurrent.futures` - 多线程并发处理
+
+## Python 版本要求 / Python Version:
+
+- Python 3.6+
+
+## 运行流水线 / Running the Pipeline:
+
+```bash
+# 运行流水线主控程序
+python pipeline.py
+```
+

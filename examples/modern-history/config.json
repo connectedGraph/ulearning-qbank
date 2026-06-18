@@ -1,0 +1,19 @@
+{
+  "openai": {
+    "base_url": "http://127.0.0.1:8081/v1",
+    "api_key": "sk-gemini-local",
+    "model": "gemini-flash-lite",
+    "rpm": 30,
+    "concurrency": 6
+  },
+  "paths": {
+    "papers_dir": "examples/modern-history/papers_json",
+    "question_bank_json": "examples/modern-history/question_bank.json",
+    "question_bank_md": "examples/modern-history/question_bank.md",
+    "batch_results_jsonl": "examples/modern-history/batch_results.jsonl",
+    "batch_results_md": "examples/modern-history/batch_results.md",
+    "title_tags_jsonl": "examples/modern-history/title_tags.jsonl",
+    "subjective_json": "examples/modern-history/subjective.json",
+    "final_html": "examples/modern-history/final_answers.html"
+  }
+}
